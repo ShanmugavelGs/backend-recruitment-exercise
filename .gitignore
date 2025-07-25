@@ -9,5 +9,5 @@ wheels/
 # Virtual environments
 .venv
 
-# Main file
-main.py
+# Environment variables
+.env
