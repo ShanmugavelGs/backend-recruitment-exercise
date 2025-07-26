@@ -5,6 +5,7 @@ WORKDIR /app
 # Install system dependencies for PDF processing
 RUN apt-get update && apt-get install -y \
     gcc \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements from parent directory
