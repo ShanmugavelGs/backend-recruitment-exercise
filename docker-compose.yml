@@ -57,6 +57,32 @@ services:
       timeout: 10s
       retries: 3
 
+  # AWS Service
+  aws_service:
+    build:
+      context: .
+      dockerfile: aws_service/Dockerfile
+    container_name: aws_service
+    ports:
+      - "8002:8002"
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-test}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-test}
+      - AWS_REGION=${AWS_REGION:-us-east-1}
+      - DYNAMODB_TABLE_DOCUMENTS=${DYNAMODB_TABLE_DOCUMENTS:-DocumentsMetadata}
+      - S3_BUCKET=${S3_BUCKET:-documents-rag-bucket}
+      - RAG_SERVICE_URL=http://rag_module:8001
+      - RAG_SERVICE_TIMEOUT=60.0
+    depends_on:
+      - rag_module
+    networks:
+      - backend-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
 networks:
   backend-network:
     driver: bridge
