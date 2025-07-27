@@ -265,11 +265,24 @@ Make sure:
 
 ## Demo Evidence
 
+### Multiple PDFs are uploaded to the PDF Service
 ![Accepting PDF Files](./screenshots/POST_RES.png)
+
+### Indexing and Embedding Documents
 ![Indexing Documents](./screenshots/rag_index_result.png)
+
+### Querying RAG Module
 ![Querying RAG Module](./screenshots/rag_query_result.png)
+
+### Documents Metadata
 ![Documents Metadata](./screenshots/DocumentsMetadata_DynamoDB.png)
+
+### Agent-Metrics Metadata
 ![Agent-Metrics Metadata](./screenshots/agent_metrics_are_stored_dynamodb.png)
+
+### Lambda Function
 ![Lambda Function](./screenshots/lambda_func_created_successfully.png)
 ![ECR](./screenshots/docker_image_build_aws_ecr.png)
+
+### Docker Containers
 ![Docker Containers](./screenshots/docker_containers.png)
