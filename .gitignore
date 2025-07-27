@@ -17,3 +17,6 @@ uploads
 
 # Input directory
 pdfs
+
+# Response directory
+response.json
