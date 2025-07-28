@@ -35,6 +35,8 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
         table = dynamodb.Table(table_name)
         
         # Parse the event
+        if "body" in event:
+            event = json.loads(event["body"])
         if isinstance(event, str):
             event = json.loads(event)
         
