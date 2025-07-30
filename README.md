@@ -1,4 +1,4 @@
-# Backend Recruitment Exercise
+# RAG Backend Project
 
 A containerized backend system composed of multiple FastAPI services and an AWS Lambda function for PDF processing, RAG (Retrieval Augmented Generation), and metrics collection.
 
